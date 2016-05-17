@@ -11,3 +11,6 @@
 - name: Set up iptables rules
   copy: src=iptables-save dest=/etc/sysconfig/iptables
   notify: restart iptables
+  
+- name: Setting SELinux Permissive
+  selinux: policy=targeted state=permissive
