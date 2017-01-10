@@ -15,4 +15,4 @@
   yum: name=firewalld state=present
   
 - name: Start Firewalld
-  service: name=firewalld state=started
+  service: name=firewalld state=started enabled=yes
