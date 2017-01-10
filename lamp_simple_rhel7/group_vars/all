@@ -3,4 +3,4 @@
 
 httpd_port: 80
 ntpserver: 127.0.0.1
-repository: https://github.com/bennojoy/mywebapp.git
+repository: https://github.com/rcalvaga/mywebapp.git
