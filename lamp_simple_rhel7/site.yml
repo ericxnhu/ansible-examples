@@ -2,21 +2,21 @@
 # This playbook deploys the whole application stack in this site.  
 
 - name: apply common configuration to all nodes
-  hosts: all
+  hosts: lamp-servers
   remote_user: root
 
   roles:
     - common
 
 - name: configure and deploy the webservers and application code
-  hosts: all
+  hosts: lamp-servers
   remote_user: root
 
   roles:
     - web
 
 - name: deploy MySQL and configure the databases
-  hosts: all
+  hosts: lamp-servers
   remote_user: root
 
   roles:
