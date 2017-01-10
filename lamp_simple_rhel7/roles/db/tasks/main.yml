@@ -34,3 +34,5 @@
 
 - name: Create Application DB User
   mysql_user: name={{ dbuser }} password={{ upassword }} priv=*.*:ALL host='%' state=present
+  notify: 
+  - restart mariadb
