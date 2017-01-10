@@ -1,7 +1,3 @@
-[webservers]
-webserver.local
-
-[dbservers]
-dbserver.local
-
+[lamp-servers]
+webserver
 
