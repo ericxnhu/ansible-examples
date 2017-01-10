@@ -13,3 +13,9 @@
 - name: Start the ntp service
   service: name=ntpd state=started enabled=yes
   tags: ntp
+  
+- name: Install Firewalld
+  yum: name=firewalld state=present
+  
+- name: Start Firewalld
+  service: name=firewalld state=started enabled=yes
