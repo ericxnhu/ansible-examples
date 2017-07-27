@@ -3,8 +3,8 @@
 - name: Revert VMware Snapshot
   hosts: all
   vars:
-    vcenter_server: thatserver.parmstrong.ca
-    snap_name: SomeSnap
+    vcenter_server: vsphere.parmstrong.ca
+    snap_name: BeforeDemo
   
   tasks:  
   - name: Revert to a snapshot
