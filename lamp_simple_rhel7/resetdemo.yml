@@ -1,5 +1,5 @@
 ---
-This playbook reverts a snapshot for a VM managed by a vcenter server
+# This playbook reverts a snapshot for a VM managed by a vcenter server
 - name: Revert VMware Snapshot
   hosts: all
   vars:
