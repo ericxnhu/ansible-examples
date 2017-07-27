@@ -10,7 +10,7 @@
   tasks:  
     - name: Revert to a snapshot
       vmware_guest_snapshot:
-        hostname: {{vcenter_server}}
+      - hostname: {{vcenter_server}}
         datacenter: {{datacenter_name}}
         name: {{ansible_hostname}}
         state: revert
