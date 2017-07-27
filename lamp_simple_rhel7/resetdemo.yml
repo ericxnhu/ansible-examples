@@ -1,13 +1,15 @@
 ---
 This playbook reverts a snapshot for a VM managed by a vcenter server
-- hosts: all
-- vars:
-  vcenter_server: thatserver.parmstrong.ca
-  snap_name: SomeSnap
+- name: Revert VMware Snapshot
+  hosts: all
+  vars:
+    vcenter_server: thatserver.parmstrong.ca
+    snap_name: SomeSnap
   
-- name: Revert to a snapshot
-  vmware_guest_snapshot:
-    hostname: {{ vcenter_server }}
-    name: {{ ansible_hostname }}
-    state: revert
-    snapshot_name: {{ snap_name }}
+  tasks:  
+  - name: Revert to a snapshot
+    vmware_guest_snapshot:
+      hostname: {{ vcenter_server }}
+      name: {{ ansible_hostname }}
+      state: revert
+      snapshot_name: {{ snap_name }}
