@@ -1,3 +1,4 @@
+---
 - name: Revert to a snapshot
   vmware_guest_snapshot:
     hostname: vsphere.parmstrong.ca
