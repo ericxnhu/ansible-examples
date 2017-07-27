@@ -4,12 +4,14 @@
   hosts: all
   vars:
     vcenter_server: vsphere.parmstrong.ca
+    datacenter_name: parmstrong.ca
     snap_name: BeforeDemo
   
   tasks:  
-  - name: Revert to a snapshot
-    vmware_guest_snapshot:
-      hostname: {{vcenter_server}}
-      name: {{ansible_hostname}}
-      state: revert
-      snapshot_name: {{snap_name}}
+    - name: Revert to a snapshot
+      vmware_guest_snapshot:
+        hostname: {{vcenter_server}}
+        datacenter: {{datacenter_name}}
+        name: {{ansible_hostname}}
+        state: revert
+        snapshot_name: {{snap_name}}
