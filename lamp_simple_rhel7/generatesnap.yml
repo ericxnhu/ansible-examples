@@ -1,5 +1,5 @@
 ---
-This playbook generates a snapshot for a VM managed by a vcenter server
+# This playbook generates a snapshot for a VM managed by a vcenter server
 - name: Generate a VMware Snapshot
   hosts: all
   vars:
