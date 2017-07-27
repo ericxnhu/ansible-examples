@@ -1,0 +1,8 @@
+- name: Revert to a snapshot
+  vmware_guest_snapshot:
+    hostname: vsphere.parmstrong.ca
+#    username: root
+#    password: vmware
+    name: webserverdemo.parmstrong.ca
+    state: revert
+    snapshot_name: BeforeDemo
