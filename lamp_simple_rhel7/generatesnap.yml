@@ -1,13 +1,15 @@
 ---
 This playbook generates a snapshot for a VM managed by a vcenter server
-- hosts: all
-- vars:
-  vcenter_server: thatserver.parmstrong.ca
-  snap_name: SomeSnap
-  
-- name: Generate a snapshot
-  vmware_guest_snapshot:
-    hostname: {{ vcenter_server }}
-    name: {{ ansible_hostname }}
-    state: present
-    snapshot_name: {{ snap_name }}
+- name: Generate a VMware Snapshot
+  hosts: all
+  vars:
+    vcenter_server: thatserver.parmstrong.ca
+    snap_name: SomeSnap
+
+  tasks:
+  - name: Generate the snapshot
+    vmware_guest_snapshot:
+      hostname: {{ vcenter_server }}
+      name: {{ ansible_hostname }}
+      state: present
+      snapshot_name: {{ snap_name }}
