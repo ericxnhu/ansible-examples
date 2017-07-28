@@ -13,5 +13,5 @@
       state: revert
       datacenter: parmstrong.ca
       hostname: vsphere.parmstrong.ca
-      name: {{ ansible_hostname }}
+      name: webserverdemo.parmstrong.ca
       snapshot_name: BeforeDemo
