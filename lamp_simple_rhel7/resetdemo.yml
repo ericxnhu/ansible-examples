@@ -3,10 +3,11 @@
 - name: Revert VMware Snapshot
   hosts: localhost
   vars:
-    vcenter_server: vsphere.parmstrong.ca
-    datacenter_name: parmstrong.ca
-    vm_hostname: webserverdemo.parmstrong.ca
-    snap_name: BeforeDemo
+    # pass these in the environment or through Tower
+    vcenter_server: your_vsphere_fqdn
+    datacenter_name: your_vms_datacenter
+    snap_name: snapshot_to_revert
+    inventory_name: your_inv_host_or_group
   
   tasks:  
   - name: Revert to a snapshot
@@ -15,5 +16,13 @@
       # Weird how Tower requires the quotes and ansible does not...
       datacenter: '{{ datacenter_name }}'
       hostname: '{{ vcenter_server }}'
-      name: '{{ vm_hostname }}'
+      name: '{{ item }}'
       snapshot_name: '{{ snap_name }}'
+    with_inventory_hostnames:
+    - '{{ inventory_name }}'
+  - name: Power the hosts back on
+    vmware_guest:
+      state: poweredon
+      name: '{{ item }}'
+    with_inventory_hostnames:
+    - '{{ inventory_name }}'
