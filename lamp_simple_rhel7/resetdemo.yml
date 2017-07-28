@@ -5,6 +5,7 @@
   vars:
     vcenter_server: vsphere.parmstrong.ca
     datacenter_name: parmstrong.ca
+    vm_hostname: webserverdemo.parmstrong.ca
     snap_name: BeforeDemo
   
   tasks:  
@@ -13,5 +14,5 @@
       state: revert
       datacenter: '{{ datacenter_name }}'
       hostname: '{{ vcenter_server }}'
-      name: '{{ ansible_hostname }}'
+      name: '{{ vm_hostname }}'
       snapshot_name: '{{ snap_name }}'
