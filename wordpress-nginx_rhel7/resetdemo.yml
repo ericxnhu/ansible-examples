@@ -27,4 +27,4 @@
       state: poweredon
       name: '{{ item }}'
     with_inventory_hostnames:
-    - '{{ inventory_name }}
+    - '{{ inventory_name }}'
