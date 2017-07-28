@@ -1,7 +1,7 @@
 ---
 # This playbook reverts a snapshot for a VM managed by a vcenter server
 - name: Revert VMware Snapshot
-  hosts: all
+  hosts: localhost
   vars:
     vcenter_server: vsphere.parmstrong.ca
     datacenter_name: parmstrong.ca
