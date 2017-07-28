@@ -12,6 +12,6 @@
     vmware_guest_snapshot:
       state: revert
       datacenter: parmstrong.ca
-      hostname: {{ vcenter_server }}
+      hostname: vsphere.parmstrong.ca
       name: {{ ansible_hostname }}
-      snapshot_name: {{ snap_name }}
+      snapshot_name: BeforeDemo
