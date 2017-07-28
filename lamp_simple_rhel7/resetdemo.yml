@@ -12,6 +12,7 @@
   - name: Revert to a snapshot
     vmware_guest_snapshot:
       state: revert
+      # Weird how Tower requires the quotes and ansible does not...
       datacenter: '{{ datacenter_name }}'
       hostname: '{{ vcenter_server }}'
       name: '{{ vm_hostname }}'
