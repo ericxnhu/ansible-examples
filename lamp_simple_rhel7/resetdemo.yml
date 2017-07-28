@@ -15,3 +15,5 @@
       hostname: vsphere.parmstrong.ca
       name: webserverdemo.parmstrong.ca
       snapshot_name: BeforeDemo
+      username: root
+    
