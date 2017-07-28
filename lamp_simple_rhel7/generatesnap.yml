@@ -1,6 +1,6 @@
 ---
 # This playbook reverts a snapshot for a VM managed by a vcenter server
-- name: Revert VMware Snapshot
+- name: Generate VMware Snapshot
   hosts: localhost
   vars:
     # pass these in the environment or through Tower
