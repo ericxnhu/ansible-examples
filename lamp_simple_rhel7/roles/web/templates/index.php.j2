@@ -4,14 +4,14 @@
   </head>
   <body>
     </br>
-    <H1><a href=http://{{ ansible_fqdn }}/index.html>Homepage</a></H1>
+    <H1><a href=http://{{ ansible_fqdn }}/index.php>Homepage</a></H1>
     </br>
     </br>
       <?php 
         Print "Hello, Ansible Workshop! This web server was configured using Ansible Tower.</BR>";
-        Print "My hostname is: ";
+        Print "My hostname is: <b>";
         echo exec('hostname');
-        Print  "</BR>";
+        Print  "</b></BR>";
         echo  "List of Databases: </BR>";
         {% for host in groups['lamp-servers'] %}
           $link = mysqli_connect('localhost', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].upassword }}') or die(mysqli_connect_error($link));
@@ -19,7 +19,7 @@
         $res = mysqli_query($link, "SHOW DATABASES;");
         while ($row = mysqli_fetch_assoc($res)) 
         {
-          echo $row['Database'] . "\n";
+          echo $row['Database'] . "</BR>";
          }
       ?>
   </body>
