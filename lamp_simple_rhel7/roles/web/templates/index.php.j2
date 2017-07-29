@@ -4,7 +4,7 @@
   </head>
   <body>
     </br>
-    <H1><a href=http://{{ ansible_default_ipv4.address }}/index.html>Homepage</a></H1>
+    <H1><a href=http://{{ ansible_fqdn }}/index.html>Homepage</a></H1>
     </br>
     </br>
       <?php 
@@ -14,7 +14,7 @@
         Print  "</BR>";
         echo  "List of Databases: </BR>";
         {% for host in groups['lamp-servers'] %}
-          $link = mysqli_connect('{{ hostvars[host].ansible_default_ipv4.address }}', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].upassword }}') or die(mysqli_connect_error($link));
+          $link = mysqli_connect('localhost', '{{ hostvars[host].dbuser }}', '{{ hostvars[host].upassword }}') or die(mysqli_connect_error($link));
         {% endfor %}
         $res = mysqli_query($link, "SHOW DATABASES;");
         while ($row = mysqli_fetch_assoc($res)) 
