@@ -15,6 +15,7 @@
       state: revert
       # Weird how Tower requires the quotes and ansible does not...
       datacenter: '{{ datacenter_name }}'
+      folder: '{{ snapshot_folder_name }}'
       hostname: '{{ vcenter_server }}'
       name: '{{ item }}'
       snapshot_name: '{{ snap_name }}'
