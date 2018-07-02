@@ -15,10 +15,6 @@
 - name: Rename install directory
   command: chdir=/usr/share /bin/mv wildfly-8.0.0.Final jboss-as creates=/usr/share/jboss-as
 
-- name: Copying standalone.xml configuration file
-  template: src=standalone.xml dest=/usr/share/jboss-as/standalone/configuration/
-  notify: restart jboss
-
 - name: Add group "jboss"
   group: name=jboss
 
