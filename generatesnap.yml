@@ -10,6 +10,13 @@
     inventory_name: your_inv_host_or_group
   
   tasks:  
+
+  - name: Check the hosts
+    debug: 
+      msg: "Host {{ item }} will be snapped"
+    with_inventory_hostnames:
+    - "{{ inventory_name }}"
+ 
   - name: Create a snapshot
     vmware_guest_snapshot:
       state: present
