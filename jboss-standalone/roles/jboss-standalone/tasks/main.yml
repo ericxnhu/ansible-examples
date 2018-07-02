@@ -40,6 +40,6 @@
     permanent: true
     state: enabled
   with_items:
-    - {{ http_port }}
-    - {{ https_port }}
+    - "{{ http_port }}"
+    - "{{ https_port }}"
 

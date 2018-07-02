@@ -18,8 +18,8 @@
       hostname: '{{ vcenter_server }}'
       name: '{{ item }}'
       snapshot_name: '{{ snap_name }}'
-    with_inventory_hostnames:
-    - '{{ inventory_name }}'
+    with_items:
+    - '{{ snapshot_hosts }}'
 
   - name: Power the hosts back on
     vmware_guest:
@@ -27,5 +27,5 @@
       hostname: '{{ vcenter_server }}'
       state: poweredon
       name: '{{ item }}'
-    with_inventory_hostnames:
-    - '{{ inventory_name }}'
+    with_items:
+    - '{{ snapshot_hosts }}'
