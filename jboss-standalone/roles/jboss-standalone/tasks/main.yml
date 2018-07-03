@@ -39,3 +39,6 @@
     - "{{ http_port }}"
     - "{{ https_port }}"
 
+- name: Reload firewalld
+  command: firewalld --reload
+
