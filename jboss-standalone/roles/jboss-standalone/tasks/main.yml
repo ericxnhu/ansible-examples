@@ -65,5 +65,5 @@
     - "{{ https_port }}"
 
 - name: Reload firewalld
-  command: firewalld --reload
+  command: firewall-cmd --reload
 
